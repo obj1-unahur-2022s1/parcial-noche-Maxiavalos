@@ -1,20 +1,23 @@
 import comidas.*
 describe "Test de Comidas" {
 	
+	var hamCar1= new HamburguesaDeCarne(peso=250,valoracionDelPan= panCasero )
+	var hamVeg1= new HamburguesasVegetarianas(peso=250,valoracionDelPan= panDeMasa, deQueLegumbre= "Garbanzos")
+	var provo1= new Provoleta(tieneEspecias= true, peso= 190)
 	method initialize() {
 		
 	}
 	
 	test "Valoración de la Hambruguesa de Carne con pan casero" {
-		assert.equals(0,0)	
+		assert.equals(80, hamCar1.valoracion())
 	}
 
 	test "Valoración de la Hambruguesa Vegetariana, con pan de masaMadre y de garbanzos como legumbre" {
-		assert.equals(0,0)	
+		assert.equals(122, hamVeg1.valoracion())	
 	}	
 	
 	test "Provoleta, de peso 190 y con especias." {
-		assert.that(true)	
+		assert.that(provo1.esEspecial())	
 	}
 	
 	test "Parrillada" {
