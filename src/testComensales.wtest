@@ -7,8 +7,8 @@ describe "Test de Comensales" {
 	
 	var vege1= new Vegetarianos(peso= 68500)
 	var provo2= new Provoleta(tieneEspecias= true, peso= 190)
-	var hamVeg3= new HamburguesasVegetarianas(peso=250,valoracionDelPan= panDeMasa.puntos(), deQueLegumbre= "Garbanzos")
-	var hamVeg4= new HamburguesasVegetarianas(peso=250,valoracionDelPan= panDeMasa.puntos(), deQueLegumbre= "Garbanzos")
+	var hamVeg3= new HamburguesasVegetarianas(valoracionDelPan= panDeMasa.puntos(), deQueLegumbre= "Garbanzos")
+	var hamVeg4= new HamburguesasVegetarianas(valoracionDelPan= panDeMasa.puntos(), deQueLegumbre= "Garbanzos")
 	
 	// #2
 	
@@ -17,8 +17,8 @@ describe "Test de Comensales" {
 	var chorizo= new Cortes(nombre= "Chorizo", calidad=8, pesoDeCorte= 50)
 	
 	
-	var comPopular= new Parrillada(peso= 200) // numero al azar para probar el test
-		
+	var parrillada= new Parrillada() // numero al azar para probar el test
+	var comPopular = new HambrePopular(peso= 85000)
 	// #3
 	
 	var comFino= new PaladarFino(peso= 85000)
@@ -31,11 +31,11 @@ describe "Test de Comensales" {
 		
 		// #2
 		
-		comPopular.agregarCorte(asado)
-		comPopular.agregarCorte(entrania)
-		comPopular.agregarCorte(chorizo)
+		parrillada.agregarCorte(asado)
+		parrillada.agregarCorte(entrania)
+		parrillada.agregarCorte(chorizo)
 		
-		//comPopular.comer(parrillada1)
+		comPopular.comer(parrillada)
 	
 	}
 	
@@ -48,11 +48,11 @@ describe "Test de Comensales" {
 	}	
 	
 	test "Paladar Fino, le agrada Hamburgesa de carne de 250 gramos con pan de masa madre." {
-		assert.that(comFino.leAgrada(new HamburguesaDeCarne(peso= 250,valoracionDelPan= panDeMasa)))	
+		assert.that(comFino.leAgrada(new HamburguesaDeCarne(valoracionDelPan= panDeMasa)))	
 	}
 	
 	test "Paladar No Fino, no le agrada Hamburguesa de carne de 250 gramos con pan casero." {
-		assert.notThat(comFino.leAgrada(new HamburguesaDeCarne(peso= 250,valoracionDelPan= panCasero)))	
+		assert.notThat(comFino.leAgrada(new HamburguesaDeCarne(valoracionDelPan= panCasero)))	
 	}
 	
 }

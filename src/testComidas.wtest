@@ -1,8 +1,9 @@
+//Falto el test de Parrillada
 import comidas.*
 describe "Test de Comidas" {
 	
-	var hamCar1= new HamburguesaDeCarne(peso=250,valoracionDelPan= panCasero )
-	var hamVeg1= new HamburguesasVegetarianas(peso=250,valoracionDelPan= panDeMasa, deQueLegumbre= "Garbanzos")
+	var hamCar1= new HamburguesaDeCarne(valoracionDelPan= panCasero )
+	var hamVeg1= new HamburguesasVegetarianas(valoracionDelPan= panDeMasa, deQueLegumbre= "Garbanzos")
 	var provo1= new Provoleta(tieneEspecias= true, peso= 190)
 	method initialize() {
 		

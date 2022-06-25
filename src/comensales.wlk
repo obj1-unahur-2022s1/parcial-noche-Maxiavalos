@@ -6,6 +6,7 @@ class Comensales {
 	
 	method comer(unaComida){comidasQueComio.add(unaComida)}
 	method leAgrada(unaComida)
+	//Era conveniente delegar 
 	method estaSatisfecho(){
 		return comidasQueComio.sum({c=> c.peso()}) >= self.peso() * 0.01
 	}	
